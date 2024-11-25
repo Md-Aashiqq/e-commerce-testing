@@ -1,5 +1,4 @@
 package org.example.base;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,6 +39,14 @@ public class BasePage {
 
     public WebElement waitForElement(By locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public void wait(int milliseconds) throws InterruptedException {
+        Thread.sleep(milliseconds);
+    }
+
+    public String getTittle() {
+        return driver.getTitle();
     }
 
 }
